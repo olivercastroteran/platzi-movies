@@ -1,9 +1,12 @@
 import React from 'react';
 import './Dashboard.scss';
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
+  const isOpen = useSelector((state) => state.navOpen.isOpen);
+
   return (
-    <div className="dashboard">
+    <div className={isOpen ? 'dashboard' : 'dashboard close'}>
       <h1>Dashboard</h1>
     </div>
   );

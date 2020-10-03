@@ -2,11 +2,30 @@
   height: 100vh;
   position: fixed;
   width: 20%;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   background-color: #283b49;
   color: #ccc;
   padding: 1rem;
+  transition: all.3s;
+
+  @media (max-width: 400px) {
+    width: 40%;
+  }
+
+  &.close {
+    width: 7%;
+
+    @media (max-width: 400px) {
+      width: 20%;
+    }
+
+    h1,
+    span {
+      display: none;
+      transition: all 0.3s;
+    }
+  }
 
   &__logo {
     display: flex;
@@ -14,13 +33,24 @@
     padding: 1rem 1rem 0 0;
 
     h1 {
+      color: #fff;
       font-size: 1.5rem;
+      transition: all 0.3s;
+
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
     }
 
     img {
       max-width: 60px;
       max-height: 60px;
       margin-right: 7px;
+
+      @media (max-width: 400px) {
+        max-height: 40px;
+        max-width: 40px;
+      }
     }
   }
 
@@ -31,10 +61,25 @@
     justify-content: space-evenly;
 
     a {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
-      margin-left: 0.7rem;
+      padding: 0.5rem;
+
+      &.active {
+        color: #fff;
+        background-color: #465e70;
+        border-radius: 3px;
+        border-left: 3px solid #98c83e;
+
+        img {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 400px) {
+        font-size: 0.7rem;
+      }
 
       &:hover img {
         opacity: 1;
@@ -59,6 +104,10 @@
       color: #ccc;
       transition: all 0.3s;
 
+      span {
+        transition: all 0.3s;
+      }
+
       &:hover {
         color: #fff;
       }
@@ -71,9 +120,28 @@
     background-color: transparent;
     border: none;
     transition: all 0.3s;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+      transition: all 0.3s;
+
+      @media (max-width: 400px) {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 4rem;
+      }
+    }
+
+    &.close img {
+      transform: rotate(180deg);
+    }
 
     &:hover {
       opacity: 1;
+      background-color: #465e70;
     }
 
     &:focus {
