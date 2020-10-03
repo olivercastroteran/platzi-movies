@@ -40,6 +40,42 @@
     }
   }
 
+  .search__language {
+    margin: 0 1rem;
+
+    &--opt {
+      color: #555;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 1px solid #79993e;
+      transition: all 0.3s;
+      outline: none;
+
+      &:hover {
+        color: #fff;
+        background-color: #98c83e;
+      }
+
+      &.selected {
+        color: #fff;
+        background-color: #79993e;
+      }
+
+      &-1 {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        transform: translateX(1px);
+      }
+
+      &-2 {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  }
+
   .search__btn {
     cursor: pointer;
     width: 10rem;
