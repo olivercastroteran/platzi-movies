@@ -1,0 +1,17 @@
+.user {
+  padding: 1.5rem 2.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 0.3s;
+
+  &.close {
+    width: 93%;
+  }
+
+  @media (max-width: 400px) {
+    width: 60%;
+  }
+}
