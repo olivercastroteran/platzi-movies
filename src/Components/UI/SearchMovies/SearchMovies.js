@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addMovies } from '../../../Store/Actions/moviesActions';
 import './SearchMovies.scss';
 
 const SearchMovies = () => {
   const [input, setInput] = useState('');
   const [language, setLanguage] = useState('en');
+  const dispatch = useDispatch();
 
   const searchMovies = async (e) => {
     e.preventDefault();
-    console.log(input);
     const api_key = '0559217f931948d53686513322d626c7';
     const query = input;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=${language}-US&query=${query}`;
@@ -15,7 +17,7 @@ const SearchMovies = () => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
+      dispatch(addMovies(data.results));
       setInput('');
     } catch (err) {
       console.error(err);

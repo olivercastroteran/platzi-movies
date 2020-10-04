@@ -3,6 +3,7 @@ import './Dashboard.scss';
 import { useSelector } from 'react-redux';
 import GoBack from '../UI/GoBack/GoBack';
 import SearchMovies from '../UI/SearchMovies/SearchMovies';
+import MoviesList from '../UI/Movies/MoviesList';
 
 const Dashboard = () => {
   const isOpen = useSelector((state) => state.navOpen.isOpen);
@@ -13,6 +14,7 @@ const Dashboard = () => {
         <GoBack />
         <SearchMovies />
       </div>
+      <MoviesList />
     </div>
   );
 };
