@@ -1,0 +1,114 @@
+.search__form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .search__label {
+    font-size: 1.2rem;
+    color: #465e70;
+
+    @media (max-width: 400px) {
+      margin-top: 1rem;
+    }
+  }
+
+  .search__input {
+    flex: 1;
+    margin: 0 2rem;
+    font-size: 1.3rem;
+    border: none;
+    border-bottom: 1px solid #555;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+
+    @media (max-width: 400px) {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      width: 90%;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid #7faa30;
+    }
+  }
+
+  .search__language {
+    margin: 0 1rem;
+
+    &--opt {
+      color: #555;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 1px solid #79993e;
+      transition: all 0.3s;
+      outline: none;
+
+      @media (max-width: 400px) {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: #98c83e;
+      }
+
+      &.selected {
+        color: #fff;
+        background-color: #79993e;
+      }
+
+      &-1 {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        transform: translateX(1px);
+      }
+
+      &-2 {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  }
+
+  .search__btn {
+    cursor: pointer;
+    width: 10rem;
+    padding: 0.5rem 1.5rem;
+    background: #79993e;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    color: #fff;
+    transition: all 0.3s;
+    outline: none;
+
+    @media (max-width: 400px) {
+      width: 7rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    &:hover {
+      background-color: #7faa30;
+      transform: scale(1.02);
+      box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: scale(1);
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

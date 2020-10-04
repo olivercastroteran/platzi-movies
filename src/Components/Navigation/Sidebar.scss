@@ -1,7 +1,8 @@
 .sidebar {
-  height: 100vh;
+  height: 100%;
   position: fixed;
   width: 20%;
+  max-width: 360px;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   background-color: #283b49;
@@ -15,6 +16,8 @@
 
   &.close {
     width: 7%;
+    max-width: 100px;
+    min-width: 56px;
 
     @media (max-width: 400px) {
       width: 20%;
@@ -31,6 +34,10 @@
     display: flex;
     align-items: center;
     padding: 1rem 1rem 0 0;
+
+    @media (max-width: 400px) {
+      padding: 0;
+    }
 
     h1 {
       color: #fff;
@@ -131,7 +138,7 @@
       @media (max-width: 400px) {
         width: 30px;
         height: 30px;
-        margin-bottom: 4rem;
+        // margin-bottom: 4rem;
       }
     }
 
