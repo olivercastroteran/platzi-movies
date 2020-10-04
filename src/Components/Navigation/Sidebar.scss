@@ -73,6 +73,24 @@
       align-items: center;
       padding: 0.5rem;
 
+      span {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      span small {
+        display: inline-block;
+        text-align: center;
+        padding: 3px 7px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: #ccc;
+        color: #283b49;
+        border-radius: 5px;
+      }
+
       &.active {
         color: #fff;
         background-color: #465e70;

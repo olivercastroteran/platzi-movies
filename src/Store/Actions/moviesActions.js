@@ -4,3 +4,10 @@ export const addMovies = (movies) => {
     payload: movies,
   };
 };
+
+export const addToFavorites = (movie) => {
+  return {
+    type: 'ADD_TO_FAVORITES',
+    payload: movie,
+  };
+};

@@ -11,6 +11,7 @@ import { toggleNav } from '../../Store/Actions/navActions';
 
 const Sidebar = () => {
   const isOpen = useSelector((state) => state.navOpen.isOpen);
+  const favCount = useSelector((state) => state.movies.favMovies.length);
   const dispatch = useDispatch();
 
   return (
@@ -36,7 +37,9 @@ const Sidebar = () => {
           <li className="sidebar-link">
             <NavLink to="/favorites">
               <img src={MyListIcon} alt="my List icon" />
-              <span>Favorites</span>
+              <span>
+                Favorites <small>{favCount}</small>
+              </span>
             </NavLink>
           </li>
 
