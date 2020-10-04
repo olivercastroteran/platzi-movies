@@ -14,6 +14,11 @@
     grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
     grid-gap: 25px;
 
+    @media (max-width: 924px) {
+      grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+      grid-gap: 17px;
+    }
+
     @media (max-width: 400px) {
       grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
       grid-gap: 10px;

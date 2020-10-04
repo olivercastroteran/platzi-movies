@@ -9,6 +9,8 @@ const SearchMovies = () => {
   const dispatch = useDispatch();
 
   const searchMovies = async (e) => {
+    if (input.length < 2) return;
+
     e.preventDefault();
     const api_key = '0559217f931948d53686513322d626c7';
     const query = input;
@@ -33,9 +35,11 @@ const SearchMovies = () => {
         <input
           autoComplete="off"
           type="text"
-          className="search__input"
+          className={
+            input.length > 1 ? 'search__input' : 'search__input invalid'
+          }
           name="query"
-          placeholder="i.e. Interstellar"
+          placeholder="i.e. Avengers (2 letters min)"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
