@@ -1,6 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeFromFavorites } from '../../../Store/Actions/moviesActions';
 
 const FavMovie = ({ movie }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="fav-movie">
       <div className="fav-movie-top">
@@ -13,7 +17,12 @@ const FavMovie = ({ movie }) => {
         <h3>{movie.title}</h3>
         <p>Rating: {movie.vote_average}</p>
         <p>{movie.overview}</p>
-        <button className="delete">Remove</button>
+        <button
+          onClick={(e) => dispatch(removeFromFavorites(movie.id))}
+          className="delete"
+        >
+          Remove
+        </button>
       </div>
     </div>
   );

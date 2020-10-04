@@ -11,3 +11,10 @@ export const addToFavorites = (movie) => {
     payload: movie,
   };
 };
+
+export const removeFromFavorites = (id) => {
+  return {
+    type: 'REMOVE_FROM_FAVORITES',
+    payload: id,
+  };
+};

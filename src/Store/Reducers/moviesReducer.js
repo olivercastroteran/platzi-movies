@@ -13,6 +13,14 @@ export const moviesReducer = (state = initState, action) => {
         ...state,
         favMovies: newFavs,
       };
+    case 'REMOVE_FROM_FAVORITES':
+      let newFavMovies = state.favMovies.filter(
+        (movie) => movie.id !== action.payload
+      );
+      return {
+        ...state,
+        favMovies: newFavMovies,
+      };
     default:
       return state;
   }
