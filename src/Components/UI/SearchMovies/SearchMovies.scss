@@ -4,7 +4,15 @@
   justify-content: space-between;
   padding: 0 2rem;
 
-  @media (max-width: 400px) {
+  @media (max-width: 1200px) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 924px) {
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     padding: 0;
@@ -14,7 +22,11 @@
     font-size: 1.2rem;
     color: #465e70;
 
-    @media (max-width: 400px) {
+    @media (max-width: 924px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
       margin-top: 1rem;
     }
   }
@@ -28,8 +40,18 @@
     background-color: transparent;
     padding: 0.5rem 1rem;
 
-    @media (max-width: 400px) {
-      font-size: 1.1rem;
+    @media (max-width: 1200px) {
+      margin: 0 0.5rem;
+    }
+
+    @media (max-width: 924px) {
+      font-size: 1rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      padding: 0.2rem;
       margin: 0.5rem 0;
       width: 90%;
     }
@@ -38,10 +60,18 @@
       outline: none;
       border-bottom: 2px solid #7faa30;
     }
+
+    &.invalid:focus {
+      border-bottom: 2px solid #c0392b;
+    }
   }
 
   .search__language {
     margin: 0 1rem;
+
+    @media (max-width: 1200px) {
+      margin: 0 0.5rem;
+    }
 
     &--opt {
       color: #555;
@@ -53,7 +83,12 @@
       transition: all 0.3s;
       outline: none;
 
-      @media (max-width: 400px) {
+      @media (max-width: 924px) {
+        font-size: 0.95rem;
+        padding: 0.4rem 1rem;
+      }
+
+      @media (max-width: 768px) {
         font-size: 0.85rem;
         padding: 0.3rem 1rem;
       }
@@ -93,7 +128,13 @@
     transition: all 0.3s;
     outline: none;
 
-    @media (max-width: 400px) {
+    @media (max-width: 924px) {
+      width: 8rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
       width: 7rem;
       padding: 0.3rem 0.6rem;
       font-size: 1.1rem;

@@ -8,13 +8,35 @@
   transition: all 0.3s;
   min-height: 100%;
 
+  @media (max-width: 1024px) {
+    padding: 1rem;
+  }
+
   &.close {
     width: 93%;
+
+    @media (max-width: 924px) {
+      width: 90%;
+      padding: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      width: 85%;
+      padding: 0.5rem;
+    }
 
     @media (max-width: 400px) {
       width: 80%;
       padding: 0.5rem;
     }
+  }
+
+  @media (max-width: 924px) {
+    width: 75%;
+  }
+
+  @media (max-width: 600px) {
+    width: 67.5%;
   }
 
   @media (max-width: 400px) {

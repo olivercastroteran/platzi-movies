@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMovies } from '../../../Store/Actions/moviesActions';
 import './SearchMovies.scss';
+import Spinner from '../Spinner/Spinner';
 
 const SearchMovies = () => {
   const [input, setInput] = useState('');
   const [language, setLanguage] = useState('en');
+  const [isReady, setIsReady] = useState(false);
   const dispatch = useDispatch();
 
   const searchMovies = async (e) => {
+    setIsReady(true);
+    if (input.length < 2) return;
+
     e.preventDefault();
     const api_key = '0559217f931948d53686513322d626c7';
     const query = input;
@@ -19,6 +24,7 @@ const SearchMovies = () => {
       const data = await res.json();
       dispatch(addMovies(data.results));
       setInput('');
+      setIsReady(false);
     } catch (err) {
       console.error(err);
     }
@@ -33,9 +39,11 @@ const SearchMovies = () => {
         <input
           autoComplete="off"
           type="text"
-          className="search__input"
+          className={
+            input.length > 1 ? 'search__input' : 'search__input invalid'
+          }
           name="query"
-          placeholder="i.e. Interstellar"
+          placeholder="i.e. Avengers (2 letters min)"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
@@ -67,6 +75,7 @@ const SearchMovies = () => {
           Search
         </button>
       </form>
+      {isReady ? <Spinner /> : null}
     </div>
   );
 };

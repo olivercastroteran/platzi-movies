@@ -15,10 +15,28 @@
   &.close {
     width: 93%;
 
+    @media (max-width: 924px) {
+      width: 90%;
+      padding: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      width: 85%;
+      padding: 0.5rem;
+    }
+
     @media (max-width: 400px) {
       width: 80%;
       padding: 0.5rem;
     }
+  }
+
+  @media (max-width: 924px) {
+    width: 75%;
+  }
+
+  @media (max-width: 600px) {
+    width: 67.5%;
   }
 
   @media (max-width: 400px) {
@@ -35,6 +53,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 30px;
+
+    @media (max-width: 924px) {
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      grid-gap: 20px;
+    }
 
     @media (max-width: 400px) {
       grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
