@@ -7,11 +7,10 @@
     &:hover {
       transform: scale(1.05);
     }
-
-    @media (max-width: 400px) {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-    }
+  }
+  @media (max-width: 400px) {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
   }
 }

@@ -20,4 +20,11 @@
   @media (max-width: 400px) {
     width: 60%;
   }
+
+  &__container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
