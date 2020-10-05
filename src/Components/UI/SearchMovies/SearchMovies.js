@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addMovies } from '../../../Store/Actions/moviesActions';
 import './SearchMovies.scss';
 import Spinner from '../Spinner/Spinner';
+import { search } from './search';
 
 const SearchMovies = () => {
   const [input, setInput] = useState('');
@@ -17,11 +18,10 @@ const SearchMovies = () => {
     e.preventDefault();
     const api_key = '0559217f931948d53686513322d626c7';
     const query = input;
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=${language}-US&query=${query}`;
 
     try {
-      const res = await fetch(url);
-      const data = await res.json();
+      const data = await search(api_key, language, query);
+      //console.log(data);
       dispatch(addMovies(data.results));
       setInput('');
       setIsReady(false);

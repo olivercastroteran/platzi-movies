@@ -11,7 +11,7 @@ const GoBack = () => {
   };
 
   return (
-    <div className="go-back">
+    <div data-testid="go-back" className="go-back">
       <GoBackIcon onClick={goBack} />
     </div>
   );
