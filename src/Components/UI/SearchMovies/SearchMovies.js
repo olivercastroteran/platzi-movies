@@ -16,7 +16,7 @@ const SearchMovies = () => {
     if (input.length < 2) return;
 
     e.preventDefault();
-    const api_key = '0559217f931948d53686513322d626c7';
+    const api_key = 'secret';
     const query = input;
 
     try {
